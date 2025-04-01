@@ -32,7 +32,9 @@ __all__ = [
 ]
 
 
-@nx._dispatchable(graphs=None, returns_graph=True)
+from networkx.utils.decorators import dispatchable
+
+@dispatchable(graphs=None, returns_graph=True)
 @nodes_or_number([0, 1])
 def grid_2d_graph(m, n, periodic=False, create_using=None):
     """Returns the two-dimensional grid graph.
